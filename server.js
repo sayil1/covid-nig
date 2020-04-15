@@ -25,7 +25,7 @@ app.set('view engine', 'ejs');
 
 // index page 
 app.get('/', function (req, res) {
-    res.render('index', {title : "welcome to covid"});
+    res.render('index');
 });
 
 app.post('/save', function (req, res) {

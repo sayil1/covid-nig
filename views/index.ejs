@@ -9,10 +9,17 @@
   </title>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
@@ -21,26 +28,26 @@
 
     <h1 class="jumbotron">this app helps you to reach the COVID-19 state helplines easily</h1>
     <h1 class="jumbotron">you will need to open the location of your device</h1>
-   
 
-   <br>
+
+    <br>
     <button v-on:click="callHelp" type="button" class="btn btn-primary btn-lg">Get Nearest Center</button>
- <br> <br>
+    <br> <br>
     <!-- <button v-on:click="callHelp()">HELLPPP</button> -->
 
-   <br>
-    <h1 v-if = "call==true">You are in {{loc.state}}</h1>
+    <br>
+    <h1 v-if="call==true">You are in {{loc.state}}</h1>
 
-    <h1 v-if = "call==true">Proceed to call {{loc.state}} hotlines
+    <h1 v-if="call==true">Proceed to call {{loc.state}} hotlines
 
-      
+
       <div v-for="item in loc.call" :key="item.message">
-          <button type="button" class="btn btn-outline-primary"> <a href="tel:item"> 234{{item}}</a></button>
-       </div>
-     ?
-    
+        <button type="button" class="btn btn-outline-primary"> <a href="tel:item"> 234{{item}}</a></button>
+      </div>
+      ?
+
     </h1>
-    
+
   </div>
 
 
@@ -83,7 +90,7 @@
                     isdone: self.isDone
                   }
                   resolve(coords)
-                }                ,
+                },
                 function error(msg) { alert('Please enable your GPS position feature.'); },
                 { maximumAge: 10000, timeout: 5000, enableHighAccuracy: true });
             } else {
@@ -104,8 +111,8 @@
             })
               .then(function (response) {
                 console.log(response);
-                 self.loc = response.data[0]
-                 self.call = true
+                self.loc = response.data[0]
+                self.call = true
                 // alert("you are in ", response)
               })
               .catch(function (error) {
@@ -115,7 +122,7 @@
 
 
         },
-      
+
       }
     })
 
