@@ -42,7 +42,7 @@
 
 
       <div v-for="item in loc.call" :key="item.message">
-        <button type="button" class="btn btn-outline-primary"> <a v-bind="tel:'+234'+item"> 234{{item}}</a></button>
+        <button type="button" class="btn btn-outline-primary"> <a :href="`234${item}`"> 234{{item}}</a></button>
       </div>
       ?
 
