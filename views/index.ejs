@@ -5,8 +5,19 @@
 
 <head>
   <title>
-
+    Covid19 Nigerian helplines
   </title>
+  <meta property="og:title" content="Easily get covid-19 helplines">
+  <meta property="og:description" content="Site to easily locate covid19 nigerian helplines based on users location">
+
+  <meta name="description" content="Site to easily locate covid19 nigerian helplines based on users location">
+  <meta name="keywords" content="covid-19 Nigerian help lines by users location">
+  <meta name="twitter:title" content="Easily get covid-19 helplines">t
+  <meta name="twitter:card" content="Site to easily locate covid19 nigerian helplines based on users location"></meta>
+  <meta name="author" content=" ">
+  <link rel="shortcut icon" type="image/png" href="../scss/icon/c1.png">
+ 
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -40,18 +51,19 @@
       <img src="../scss/icon/c5.png" width="90" height="90">
       <img src="../scss/icon/c6.png" width="90" height="90">
     </div>
-<br><br>
-<hr> <br>
+    <br><br>
+    <hr> <br>
     <div class="banner-area banner-3">
 
       <div id="contl">
         <p class="" style="font-size: 60px; color:royalblue">easily locate COVID-19! helplines</p> <br>
         <h3 style="color:red">please on your device's location</h3>
         <br> <br> <br>
-      
+
         <!-- <p id="pppp" style="font-size: 50px; margin-top: 50px">REPORT ANY SUSPECTED COVID-19 CASE</p> -->
         <!-- <p class="hh"> TURN ON DEVICE LOCATION </p> -->
-        <button type="button" v-on:click="callHelp" class="btn btn-primary btn-lg">Locate nearest Center</button> <br> <br>
+        <button type="button" v-on:click="callHelp" class="btn btn-primary btn-lg">Locate nearest Center</button> <br>
+        <br>
         <div class="test">
           <div v-if="spiner==true" class="lds-ripple">
             <div></div>
@@ -118,7 +130,7 @@
                 function (position) {
                   self.lat = position.coords.latitude;
                   self.long = position.coords.longitude;
-                
+
                   self.isDone = true
                   var accuracy = position.coords.accuracy;
                   var mapOptions = {
