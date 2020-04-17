@@ -4,6 +4,7 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var db = mongoose.connection;
+const path = require("path")
 // mongoose.connect('mongodb://localhost/nema', { useNewUrlParser: true, useFindAndModify: false });
 
 
@@ -18,6 +19,7 @@ app.use(bodyParser.urlencoded({
 mongoose.connect('mongodb+srv://sayil:sayil2194@cluster0-knm9b.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
 
 const Message = require('./messageSchema')
+app.use("/scss", express.static(path.join(__dirname, "scss")))
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
